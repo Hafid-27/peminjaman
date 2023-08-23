@@ -11,15 +11,15 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-life-ring fa-spin fa-5x fa-fw"></i>
+                                    <i class="fa fa-life-ring fa-5x fa-fw"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $jml_dokumen ?></div>
+                                    <div class="huge"><?php echo $jml_fasilitas ?></div>
                                     <div>Fasilitas Tersedia</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url('admin_system/dokumen') ?>">
+                        <a href="<?php echo base_url('admin_system/fasilitas') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">Lihat Selengkapnya</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -33,10 +33,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-spin fa-5x"></i>
+                                    <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $ttl_dokumen ?></div>
+                                    <div class="huge"><?php echo $ttl_fasilitas ?></div>
                                     <div>Riwayat Peminjaman</div>
                                 </div>
                             </div>

@@ -21,7 +21,7 @@
                         <tr>
                           <!--<th>ID Pinjam</th>-->
                           <th>Nama Karyawan</th>
-                          <th>Nama Dokumen</th>
+                          <th>Nama fasilitas</th>
                           <th>Jumlah Pinjam</th>
                           <th>Tanggal Pinjam</th>
                           <th class="setujui">Setujui</th>
@@ -33,7 +33,7 @@
                           <tr>
                             <!--<td><?php echo $d1->id_pinjam ?></td>-->
                             <td><?php echo $d1->name_peminjam ?></td>
-                            <td><?php echo $d1->name_dokumen ?></td>
+                            <td><?php echo $d1->name_fasilitas ?></td>
                             <td><?php echo $d1->jml ?></td>
                             <td><?php echo $d1->tgl_pinjam ?></td>
                             <td class="text-center setujui">
@@ -46,7 +46,7 @@
                               <form action="<?php echo base_url('admin_system/pinjam_tolak') ?>" method="post">
                                 <input type="hidden" name="id_pinjam" value="<?php echo $d1->id_pinjam ?>">
                                 <input type="hidden" name="id_peminjam" value="<?php echo $d1->id_peminjam ?>">
-                                <input type="hidden" name="id_dokumen" value="<?php echo $d1->id_dokumen ?>">
+                                <input type="hidden" name="id_fasilitas" value="<?php echo $d1->id_fasilitas ?>">
                                 <input type="hidden" name="jml" value="<?php echo $d1->jml ?>">
                                 <input type="hidden" name="tgl_pinjam" value="<?php echo $d1->tgl_pinjam ?>">
                                 <input type="hidden" name="tgl_kembali" value="<?php echo $d1->tgl_kembali ?>">

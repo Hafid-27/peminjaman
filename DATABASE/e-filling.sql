@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_dokumen`
+-- Table structure for table `tbl_fasilitas`
 --
 
-CREATE TABLE `tbl_dokumen` (
-  `id_dokumen` int(10) NOT NULL,
+CREATE TABLE `tbl_fasilitas` (
+  `id_fasilitas` int(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `nama_pt` varchar(50) NOT NULL,
   `kode` varchar(50) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `tbl_dokumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_dokumen`
+-- Dumping data for table `tbl_fasilitas`
 --
 
-INSERT INTO `tbl_dokumen` (`id_dokumen`, `name`, `nama_pt`, `kode`, `desc`, `stock`, `status`) VALUES
+INSERT INTO `tbl_fasilitas` (`id_fasilitas`, `name`, `nama_pt`, `kode`, `desc`, `stock`, `status`) VALUES
 (47, 'CASH-PT.TPIN-CASH/TPIN/IV/22/001', 'TPIN-PT.TT.Techno park indonesia', 'CASH/TPIN/IV/22/001', 'Nama tidak lengkap', 11, 'tampilkan');
 
 -- --------------------------------------------------------
@@ -104,7 +104,7 @@ INSERT INTO `tbl_petugas` (`id_petugas`, `username`, `password`, `name`, `email`
 CREATE TABLE `tbl_pinjam` (
   `id_pinjam` int(10) NOT NULL,
   `id_peminjam` int(10) NOT NULL,
-  `id_dokumen` int(10) NOT NULL,
+  `id_fasilitas` int(10) NOT NULL,
   `jml` int(20) NOT NULL,
   `tgl_pinjam` datetime NOT NULL,
   `tgl_kembali` datetime NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE `tbl_pinjam` (
 -- Dumping data for table `tbl_pinjam`
 --
 
-INSERT INTO `tbl_pinjam` (`id_pinjam`, `id_peminjam`, `id_dokumen`, `jml`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+INSERT INTO `tbl_pinjam` (`id_pinjam`, `id_peminjam`, `id_fasilitas`, `jml`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
 (43, 38, 1, 5, '2018-11-02 21:32:43', '0000-00-00 00:00:00', '1'),
 (45, 38, 2, 3, '2018-11-02 21:33:02', '0000-00-00 00:00:00', '0'),
 (46, 38, 3, 5, '2018-11-02 23:32:16', '0000-00-00 00:00:00', '0'),
@@ -139,7 +139,7 @@ INSERT INTO `tbl_pinjam` (`id_pinjam`, `id_peminjam`, `id_dokumen`, `jml`, `tgl_
 CREATE TABLE `tbl_riwayat` (
   `id_pinjam` int(10) NOT NULL,
   `id_peminjam` int(10) NOT NULL,
-  `id_dokumen` int(10) NOT NULL,
+  `id_fasilitas` int(10) NOT NULL,
   `jml` int(20) NOT NULL,
   `tgl_pinjam` datetime NOT NULL,
   `tgl_kembali` datetime NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `tbl_riwayat` (
 -- Dumping data for table `tbl_riwayat`
 --
 
-INSERT INTO `tbl_riwayat` (`id_pinjam`, `id_peminjam`, `id_dokumen`, `jml`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+INSERT INTO `tbl_riwayat` (`id_pinjam`, `id_peminjam`, `id_fasilitas`, `jml`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
 (58, 49, 11, 2, '2022-11-11 01:28:37', '2022-11-11 04:38:52', '1'),
 (59, 49, 11, 2, '2022-11-11 03:01:11', '2022-11-11 04:38:54', '1'),
 (60, 49, 11, 1, '2022-11-11 03:18:21', '2022-11-11 04:38:55', '1'),
@@ -166,10 +166,10 @@ INSERT INTO `tbl_riwayat` (`id_pinjam`, `id_peminjam`, `id_dokumen`, `jml`, `tgl
 --
 
 --
--- Indexes for table `tbl_dokumen`
+-- Indexes for table `tbl_fasilitas`
 --
-ALTER TABLE `tbl_dokumen`
-  ADD PRIMARY KEY (`id_dokumen`);
+ALTER TABLE `tbl_fasilitas`
+  ADD PRIMARY KEY (`id_fasilitas`);
 
 --
 -- Indexes for table `tbl_peminjam`
@@ -194,10 +194,10 @@ ALTER TABLE `tbl_pinjam`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_dokumen`
+-- AUTO_INCREMENT for table `tbl_fasilitas`
 --
-ALTER TABLE `tbl_dokumen`
-  MODIFY `id_dokumen` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+ALTER TABLE `tbl_fasilitas`
+  MODIFY `id_fasilitas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `tbl_peminjam`

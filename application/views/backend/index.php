@@ -125,13 +125,13 @@
               </ul>
             </li>
             <li>
-              <a href="#"><i class="fa fa-life-ring fa-spin fa-1x fa-fw"></i> Fasilitas<span class="fa arrow"></span></a></a>
+              <a href="#"><i class="fa fa-life-ring fa-1x fa-fw"></i> Fasilitas<span class="fa arrow"></span></a></a>
               <ul class="nav nav-second-level">
                 <li>
-                  <a href="<?php echo base_url('admin_system/dokumen') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Stok Fasilitas</a>
+                  <a href="<?php echo base_url('admin_system/fasilitas') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Stok Fasilitas</a>
                 </li>
                 <li>
-                  <a href="<?php echo base_url('admin_system/dokumen_form') ?>"><i class="fa fa-plus fa-fw"></i> Add Fasilitas</a>
+                  <a href="<?php echo base_url('admin_system/fasilitas_form') ?>"><i class="fa fa-plus fa-fw"></i> Add Fasilitas</a>
                 </li>
               </ul>
             </li>
@@ -295,16 +295,10 @@
 
   <!-- WARNING VALIDATE SCRIPT  -->
   <script type="text/javascript">
-    var jvalidate = $("#dokumen_form").validate({
+    var jvalidate = $("#fasilitas_form").validate({
       ignore: [],
       rules: {
         name: {
-          required: true
-        },
-        nama_pt: {
-          required: true
-        },
-        kode: {
           required: true
         },
         desc: {
@@ -319,21 +313,21 @@
       },
       submitHandler: function(form) {
         var target = $(form).attr('action');
-        $('#dokumen_form .alert-warning').removeClass('hidden');
-        $('#dokumen_form .alert-success').addClass('hidden');
-        $('#dokumen_form .alert-danger').addClass('hidden');
+        $('#fasilitas_form .alert-warning').removeClass('hidden');
+        $('#fasilitas_form .alert-success').addClass('hidden');
+        $('#fasilitas_form .alert-danger').addClass('hidden');
         $.ajax({
           url: target,
           type: 'POST',
           dataType: 'json',
           data: $(form).serialize(),
           success: function(response) {
-            $('#dokumen_form .alert-warning').addClass('hidden');
+            $('#fasilitas_form .alert-warning').addClass('hidden');
             if (response.status == 'ok') {
-              $('#dokumen_form .alert-success').removeClass('hidden').children('span').text(response.msg);
+              $('#fasilitas_form .alert-success').removeClass('hidden').children('span').text(response.msg);
               window.location.href = response.redirect;
             } else
-              $('#dokumen_form .alert-danger').removeClass('hidden').children('span').text(response.msg);
+              $('#fasilitas_form .alert-danger').removeClass('hidden').children('span').text(response.msg);
           },
           error: function(jqXHR, textStatus, errorThrown) {
             alert(textStatus, errorThrown);

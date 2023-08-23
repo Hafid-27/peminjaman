@@ -14,12 +14,12 @@
                                     <i class="fa fa-archive fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $ttl_dokumen ?></div>
+                                    <div class="huge"><?php echo $ttl_fasilitas ?></div>
                                     <div>Fasilitas Tersedia</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url('member_system/dokumen') ?>">
+                        <a href="<?php echo base_url('member_system/fasilitas') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">Lihat Selengkapnya</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -21,7 +21,7 @@
                         <tr>
                           <!--<th>ID Pinjam</th>-->
                           <th>Nama Karyawan</th>
-                          <th>Nama Dokumen</th>
+                          <th>Nama fasilitas</th>
                           <th>Jumlah Pinjam</th>
                           <th>Tanggal Pinjam</th>
                         </tr>
@@ -31,7 +31,7 @@
                           <tr>
                             <!--<td><?php echo $d1->id_pinjam ?></td>-->
                             <td><?php echo $d1->name_peminjam ?></td>
-                            <td><?php echo $d1->name_dokumen ?></td>
+                            <td><?php echo $d1->name_fasilitas ?></td>
                             <td><?php echo $d1->jml ?></td>
                             <td><?php echo $d1->tgl_pinjam ?></td>
                           </tr>

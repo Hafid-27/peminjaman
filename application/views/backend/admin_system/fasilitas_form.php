@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Form Dokumen</h1>
+		<h1 class="page-header">Form fasilitas</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -8,11 +8,11 @@
 <!-- START DEFAULT DATATABLE -->
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Form Input Dokumen</h3>
+		<h3 class="panel-title">Form Input fasilitas</h3>
 	</div>
-	<form class="form-horizontal" method="POST" id="dokumen_form" action="<?php if ($data != null) echo base_url('admin_system/dokumen_update');
-																			else echo base_url('admin_system/dokumen_add'); ?>">
-		<input type="hidden" name="id_dokumen" value="<?php if ($data != null) echo $data->id_dokumen; ?>">
+	<form class="form-horizontal" method="POST" id="fasilitas_form" action="<?php if ($data != null) echo base_url('admin_system/fasilitas_update');
+																			else echo base_url('admin_system/fasilitas_add'); ?>">
+		<input type="hidden" name="id_fasilitas" value="<?php if ($data != null) echo $data->id_fasilitas; ?>">
 		<div class="panel-body">
 			<div class="alert alert-success hidden"><strong>Berhasil! </strong><span></span></div>
 			<div class="alert alert-warning hidden"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
@@ -22,26 +22,14 @@
 			<div class="form-group">
 				<label class="col-md-4 col-xs-12 control-label">ID</label>
 				<div class="col-md-2 col-xs-12">
-					<input type="text" class="form-control" value="<?php if ($data != null) echo $data->id_dokumen;
+					<input type="text" class="form-control" value="<?php if ($data != null) echo $data->id_fasilitas;
 																	else echo 'AUTO' ?>" disabled>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Nama Dokumen</label>
+				<label class="col-md-4 col-xs-12 control-label">Nama fasilitas</label>
 				<div class="col-md-2 col-xs-12">
 					<input type="text" name="name" class="form-control" value="<?php if ($data != null) echo $data->name; ?>">
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Nama Perusahaan</label>
-				<div class="col-md-5 col-xs-12">
-					<input type="text" name="nama_pt" class="form-control" value="<?php if ($data != null) echo $data->nama_pt; ?>">
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Kode Document</label>
-				<div class="col-md-5 col-xs-12">
-					<input type="text" name="kode" class="form-control" value="<?php if ($data != null) echo $data->kode; ?>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -78,7 +66,7 @@
 
 		</div>
 		<div class="panel-footer text-right">
-			<a href="<?php echo base_url('admin_system/dokumen'); ?>" class="pull-left btn btn-info"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<a href="<?php echo base_url('admin_system/fasilitas'); ?>" class="pull-left btn btn-info"><i class="fa fa-arrow-left"></i> Kembali</a>
 			<button class="btn btn-default" type="reset">Reset</button>
 			<button class="btn btn-primary" type="submit">Simpan</button>
 		</div>

@@ -17,9 +17,7 @@
                       <thead>
                         <tr>
                           <!--<th>ID</th>-->
-                          <th>Nama Dokumen</th>
-                          <th>Nama Perusahaan</th>
-                          <th>kode</th>
+                          <th>Nama fasilitas</th>
                           <th>Deskripsi</th>
                           <th>Stock</th>
                           <th>Pinjam</th>
@@ -28,15 +26,13 @@
                       <tbody>
                         <?php foreach ($data as $d1) { ?>
                           <tr>
-                            <!--<td><?php echo $d1->id_dokumen ?></td>-->
+                            <!--<td><?php echo $d1->id_fasilitas ?></td>-->
                             <td><?php echo $d1->name ?></td>
-                            <td><?php echo $d1->nama_pt ?></td>
-                            <td><?php echo $d1->kode ?></td>
                             <td><?php echo $d1->desc ?></td>
                             <td><?php echo $d1->stock ?></td>
                             <td class="text-center">
-                              <form action="<?php echo base_url('member_system/dokumen_pinjam') ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $d1->id_dokumen ?>">
+                              <form action="<?php echo base_url('member_system/fasilitas_pinjam') ?>" method="post">
+                                <input type="hidden" name="id" value="<?php echo $d1->id_fasilitas ?>">
                                 <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip"><i class="fa fa-book"></i> Pinjam</button>
                               </form>
                             </td>

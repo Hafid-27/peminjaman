@@ -10,9 +10,9 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">Form Pinjam Fasilitas</h3>
 	</div>
-	<form class="form-horizontal" method="POST" id="dokumen_pinjam" action="<?php echo base_url('member_system/dokumen_pinjam_act'); ?>">
+	<form class="form-horizontal" method="POST" id="fasilitas_pinjam" action="<?php echo base_url('member_system/fasilitas_pinjam_act'); ?>">
 		<input type="hidden" name="id_peminjam" value="<?php echo $userdata['id_peminjam'] ?>">
-		<input type="hidden" name="id_dokumen" value="<?php echo $data->id_dokumen; ?>">
+		<input type="hidden" name="id_fasilitas" value="<?php echo $data->id_fasilitas; ?>">
 		<input type="hidden" name="tgl_kembali" value="0">
 		<input type="hidden" name="status" value="0">
 		<div class="panel-body">
@@ -24,7 +24,7 @@
 			<div class="form-group">
 				<label class="col-md-4 col-xs-12 control-label">ID</label>
 				<div class="col-md-2 col-xs-12">
-					<input type="text" class="form-control" value="<?php echo $data->id_dokumen; ?>" disabled>
+					<input type="text" class="form-control" value="<?php echo $data->id_fasilitas; ?>" disabled>
 				</div>
 			</div>
 			<div class="form-group">
@@ -34,19 +34,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Nama Perusahaan</label>
-				<div class="col-md-2 col-xs-12">
-					<input type="text" name="" class="form-control" value="<?php echo $data->nama_pt; ?>" disabled>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Kode</label>
-				<div class="col-md-2 col-xs-12">
-					<input type="text" name="" class="form-control" value="<?php echo $data->kode; ?>" disabled>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-4 col-xs-12 control-label">Dokumen</label>
+				<label class="col-md-4 col-xs-12 control-label">fasilitas</label>
 				<div class="col-md-5 col-xs-12">
 					<input type="text" name="" class="form-control" value="<?php echo $data->desc; ?>" disabled>
 				</div>
@@ -72,7 +60,7 @@
 
 		</div>
 		<div class="panel-footer text-right">
-			<a href="<?php echo base_url('member_system/dokumen'); ?>" class="pull-left btn btn-info"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<a href="<?php echo base_url('member_system/fasilitas'); ?>" class="pull-left btn btn-info"><i class="fa fa-arrow-left"></i> Kembali</a>
 			<button class="btn btn-default" type="reset">Reset</button>
 			<button class="btn btn-primary" type="submit">Simpan</button>
 		</div>

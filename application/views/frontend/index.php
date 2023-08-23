@@ -93,7 +93,7 @@
               <a href="<?php echo base_url('member/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-              <a href="<?php echo base_url('member_system/dokumen') ?>"><i class="fa fa-archive fa-fw"></i> Pengajuan Pinjam Fasilitas</a>
+              <a href="<?php echo base_url('member_system/fasilitas') ?>"><i class="fa fa-archive fa-fw"></i> Pengajuan Pinjam Fasilitas</a>
             </li>
             <li>
               <a href="<?php echo base_url('member_system/pinjam') ?>"><i class="fa fa-book fa-fw"></i> Fasilitas Dipinjam</a>
@@ -157,7 +157,7 @@
 
   <!-- WARNING VALIDATE SCRIPT  -->
   <script type="text/javascript">
-    var jvalidate = $("#dokumen_pinjam").validate({
+    var jvalidate = $("#fasilitas_pinjam").validate({
       ignore: [],
       rules: {
         jml: {
@@ -166,21 +166,21 @@
       },
       submitHandler: function(form) {
         var target = $(form).attr('action');
-        $('#dokumen_pinjam .alert-warning').removeClass('hidden');
-        $('#dokumen_pinjam .alert-success').addClass('hidden');
-        $('#dokumen_pinjam .alert-danger').addClass('hidden');
+        $('#fasilitas_pinjam .alert-warning').removeClass('hidden');
+        $('#fasilitas_pinjam .alert-success').addClass('hidden');
+        $('#fasilitas_pinjam .alert-danger').addClass('hidden');
         $.ajax({
           url: target,
           type: 'POST',
           dataType: 'json',
           data: $(form).serialize(),
           success: function(response) {
-            $('#dokumen_pinjam .alert-warning').addClass('hidden');
+            $('#fasilitas_pinjam .alert-warning').addClass('hidden');
             if (response.status == 'ok') {
-              $('#dokumen_pinjam .alert-success').removeClass('hidden').children('span').text(response.msg);
+              $('#fasilitas_pinjam .alert-success').removeClass('hidden').children('span').text(response.msg);
               window.location.href = response.redirect;
             } else
-              $('#dokumen_pinjam .alert-danger').removeClass('hidden').children('span').text(response.msg);
+              $('#fasilitas_pinjam .alert-danger').removeClass('hidden').children('span').text(response.msg);
           },
           error: function(jqXHR, textStatus, errorThrown) {
             alert(textStatus, errorThrown);

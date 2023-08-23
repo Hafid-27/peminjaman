@@ -17,7 +17,7 @@
                       <thead>
                         <tr>
                           <!--<th>ID Pinjam</th>-->
-                          <th>Nama Dokumen</th>
+                          <th>Nama fasilitas</th>
                           <th>Jumlah Pinjam</th>
                           <th>Tanggal Pinjam</th>
                           <th>Tanggal Kembali</th>

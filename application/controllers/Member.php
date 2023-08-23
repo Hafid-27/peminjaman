@@ -30,18 +30,18 @@ class Member extends PX_Controller
 		if ($this->session->userdata('peminjam') == FALSE) {
 			redirect('member');
 		} else
-			$jml_dokumen = $this->model_basic->select_where('tbl_dokumen', 'status', 'tampilkan')->result();
+			$jml_fasilitas = $this->model_basic->select_where('tbl_fasilitas', 'status', 'tampilkan')->result();
 		$jml_pinjam = $this->model_basic->select_where('tbl_pinjam', 'id_peminjam', $this->session_peminjam['id_peminjam'])->result();
-		$ttl_dokumen = 0;
-		foreach ($jml_dokumen as $stock) {
-			$ttl_dokumen += $stock->stock;
+		$ttl_fasilitas = 0;
+		foreach ($jml_fasilitas as $stock) {
+			$ttl_fasilitas += $stock->stock;
 		}
 		$ttl_pinjam = 0;
 		foreach ($jml_pinjam as $jml) {
 			$ttl_pinjam += $jml->jml;
 		}
 
-		$data['ttl_dokumen'] = $ttl_dokumen;
+		$data['ttl_fasilitas'] = $ttl_fasilitas;
 		$data['ttl_pinjam'] = $ttl_pinjam;
 		$data['content'] = $this->load->view('frontend/member/dashboard', $data, true);
 		$this->load->view('frontend/index', $data);

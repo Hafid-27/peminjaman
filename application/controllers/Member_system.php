@@ -21,26 +21,26 @@ class Member_system extends PX_Controller
 		$this->load->view('frontend/index', $data);
 	}
 
-	function dokumen()
+	function fasilitas()
 	{
 		$this->check_login_peminjam();
 		$data['userdata'] = $this->session_peminjam;
-		$data['data'] = $this->model_basic->select_where('tbl_dokumen', 'status', 'tampilkan')->result();
-		$data['content'] = $this->load->view('frontend/member_system/dokumen', $data, true);
+		$data['data'] = $this->model_basic->select_where('tbl_fasilitas', 'status', 'tampilkan')->result();
+		$data['content'] = $this->load->view('frontend/member_system/fasilitas', $data, true);
 		$this->load->view('frontend/index', $data);
 	}
 
-	function dokumen_pinjam()
+	function fasilitas_pinjam()
 	{
 		$this->check_login_peminjam();
 		$data['userdata'] = $this->session_peminjam;
 		$id = $this->input->post('id');
-		$data['data'] = $this->model_basic->select_where('tbl_dokumen', 'id_dokumen', $id)->row();
-		$data['content'] = $this->load->view('frontend/member_system/dokumen_pinjam', $data, true);
+		$data['data'] = $this->model_basic->select_where('tbl_fasilitas', 'id_fasilitas', $id)->row();
+		$data['content'] = $this->load->view('frontend/member_system/fasilitas_pinjam', $data, true);
 		$this->load->view('frontend/index', $data);
 	}
 
-	function dokumen_pinjam_act()
+	function fasilitas_pinjam_act()
 	{
 		$this->check_login_peminjam();
 		$data['userdata'] = $this->session_peminjam;
@@ -51,10 +51,10 @@ class Member_system extends PX_Controller
 		}
 		$limit = array(
 			'id_peminjam' => $this->session_peminjam['id_peminjam'],
-			'id_dokumen' => $insert['id_dokumen']
+			'id_fasilitas' => $insert['id_fasilitas']
 		);
 
-		$check = $this->model_basic->select_where('tbl_dokumen', 'id_dokumen', $insert['id_dokumen'])->row();
+		$check = $this->model_basic->select_where('tbl_fasilitas', 'id_fasilitas', $insert['id_fasilitas'])->row();
 		$limits = $this->model_basic->select_where_array('tbl_pinjam', $limit)->result();
 		$check_limit = 0;
 		foreach ($limits as $limit) {
@@ -70,9 +70,9 @@ class Member_system extends PX_Controller
 			} else {
 				if ($insert) {
 					$update['stock'] = $check->stock - $insert['jml'];
-					$do_update = $this->model_basic->update('tbl_dokumen', $update, 'id_dokumen', $insert['id_dokumen']);
+					$do_update = $this->model_basic->update('tbl_fasilitas', $update, 'id_fasilitas', $insert['id_fasilitas']);
 					$do_insert = $this->model_basic->insert_all('tbl_pinjam', $insert);
-					$this->returnJson(array('status' => 'ok', 'msg' => 'Pinjam dokumen Berhasil', 'redirect' => 'dokumen'));
+					$this->returnJson(array('status' => 'ok', 'msg' => 'Pinjam fasilitas Berhasil', 'redirect' => 'fasilitas'));
 				} else {
 					$this->returnJson(array('status' => 'error', 'msg' => 'Periksa kembali form'));
 				}
@@ -84,7 +84,7 @@ class Member_system extends PX_Controller
 	{
 		$this->check_login_peminjam();
 		$data['userdata'] = $this->session_peminjam;
-		$data['data'] = $this->model_basic->select_where_join('tbl_pinjam', 'tbl_pinjam.*,tbl_dokumen.name', 'id_peminjam', $this->session_peminjam['id_peminjam'], 'tbl_dokumen', 'tbl_pinjam.id_dokumen', 'tbl_dokumen.id_dokumen')->result();
+		$data['data'] = $this->model_basic->select_where_join('tbl_pinjam', 'tbl_pinjam.*,tbl_fasilitas.name', 'id_peminjam', $this->session_peminjam['id_peminjam'], 'tbl_fasilitas', 'tbl_pinjam.id_fasilitas', 'tbl_fasilitas.id_fasilitas')->result();
 		$data['content'] = $this->load->view('frontend/member_system/pinjam', $data, true);
 		$this->load->view('frontend/index', $data);
 	}
@@ -110,7 +110,7 @@ class Member_system extends PX_Controller
 	{
 		$this->check_login_peminjam();
 		$data['userdata'] = $this->session_peminjam;
-		$data['data'] = $this->model_basic->select_where_join_2('tbl_riwayat', 'tbl_riwayat.*,tbl_dokumen.name as name_dokumen,tbl_peminjam.name as name_peminjam', 'tbl_riwayat.id_peminjam', $this->session_peminjam['id_peminjam'], 'tbl_dokumen', 'tbl_riwayat.id_dokumen', 'tbl_dokumen.id_dokumen', 'tbl_peminjam', 'tbl_riwayat.id_peminjam', 'tbl_peminjam.id_peminjam')->result();
+		$data['data'] = $this->model_basic->select_where_join_2('tbl_riwayat', 'tbl_riwayat.*,tbl_fasilitas.name as name_fasilitas,tbl_peminjam.name as name_peminjam', 'tbl_riwayat.id_peminjam', $this->session_peminjam['id_peminjam'], 'tbl_fasilitas', 'tbl_riwayat.id_fasilitas', 'tbl_fasilitas.id_fasilitas', 'tbl_peminjam', 'tbl_riwayat.id_peminjam', 'tbl_peminjam.id_peminjam')->result();
 		$data['content'] = $this->load->view('frontend/member_system/riwayat', $data, true);
 		$this->load->view('frontend/index', $data);
 	}

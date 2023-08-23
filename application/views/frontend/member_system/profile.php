@@ -10,7 +10,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">Identitas Profil</h3>
 	</div>
-	<form class="form-horizontal" method="POST" id="dokumen_pinjam" action="<?php echo base_url('member_system/dokumen_pinjam_act'); ?>">
+	<form class="form-horizontal" method="POST" id="fasilitas_pinjam" action="<?php echo base_url('member_system/fasilitas_pinjam_act'); ?>">
 		<div class="panel-body">
 			<!--				-------------------------------------------------------------------------------------------------------->
 			<div class="form-group">
